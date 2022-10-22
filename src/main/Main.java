@@ -42,13 +42,13 @@ public class Main {
                     System.out.println("Ingrese DNI");
                     dni = in.nextInt();
                     persona = new Persona(nombre, apellido, dni);
-                    
+
                     System.out.println("Indique una Fecha");
                     fecha = in.next();
-
+                    
                     Turnos turno = elijaTurno();
                     Sala s = new Sala(1, turno, fecha);
-                    
+
                     System.out.println("------------------------------");
                     System.out.println(res.crearReserva(s, persona));
                     System.out.println("------------------------------");
@@ -64,13 +64,20 @@ public class Main {
     public static Turnos elijaTurno() {
         Turnos t = null;
         int i;
-        
-        System.out.println("\nElija un turno");
-        
-        for (Turnos turno : Turnos.values()) {
-            System.out.println(turno.ordinal()+1 + ". "+ turno);
-        }
-         i = in.nextInt();
+        boolean correcto;
+
+        do {
+            System.out.println("\nElija un turno");
+            for (Turnos turno : Turnos.values()) {
+                System.out.println(turno.ordinal() + 1 + ". " + turno);
+            }
+            i = in.nextInt();
+
+            correcto = !(i > 0 && i <= Turnos.values().length);
+
+            System.out.println((correcto) ? "Opción Incorrecta" : "");
+
+        } while (correcto);
 
         return t = Turnos.values()[i - 1];
     }
