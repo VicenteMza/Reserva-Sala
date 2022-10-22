@@ -19,7 +19,11 @@ public class Ticket {
 
      @Override
     public String toString() {
-        return "Ticket{" + " NombreCompleto= " + nomApe + ", dni= " + dni + ", numSala= " 
-                + numSala + ", fecha= " + fecha + ", turno= " + turno + '}';
+        return "Ticket Creado:\n" + 
+                "Nombre Completo= " + nomApe + 
+                "\nDni= " + dni + 
+                "\nNumSala= " + numSala + 
+                "\nFecha= " + fecha + 
+                "\nTurno= " + turno;
     } 
 }

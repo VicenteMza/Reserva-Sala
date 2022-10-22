@@ -18,6 +18,10 @@ public class Persona {
     public int getDni() {
         return dni;
     }
-    
+
+    @Override
+    public String toString() {
+        return "Persona{" + "nombre=" + nombre + ", apellido=" + apellido + ", dni=" + dni + '}';
+    }
     
 }
