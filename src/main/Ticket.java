@@ -1,14 +1,16 @@
 package main;
 
+import java.time.LocalDate;
+
 public class Ticket {
    
     private String nomApe;
     private int dni;
     private int numSala;
-    private String fecha;
+    private LocalDate fecha;
     private Turnos turno;
 
-    public Ticket(String nomApe, int dni, int numSala, String fecha, Turnos turno) {
+    public Ticket(String nomApe, int dni, int numSala, LocalDate fecha, Turnos turno) {
        
         this.nomApe = nomApe;
         this.dni= dni;

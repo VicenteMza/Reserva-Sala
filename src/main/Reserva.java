@@ -1,5 +1,6 @@
 package main;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class Reserva {
@@ -41,7 +42,7 @@ public class Reserva {
 
     private boolean salaValida(Sala sala) {
         int numSa = sala.getNumSala();
-        String fech = sala.getFecha();
+        LocalDate fech = sala.getFecha();
         Turnos turn = sala.getTurno();
 
         for (Sala s : salas) {

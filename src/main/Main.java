@@ -1,5 +1,6 @@
 package main;
 
+import java.time.LocalDate;
 import java.util.Scanner;
 
 public class Main {
@@ -13,15 +14,17 @@ public class Main {
         String apellido;
         int dni;
 
+//        Persona persona = new Persona("Vicente", "Llanos", 30312585);
+//        Sala sala = new Sala(1, Turnos.MAÑANA, "19-04-2022");
+//
+//        res.crearReserva(sala, persona);
+//
+//        Persona persona1 = new Persona("Valeria", "Perez", 58965421);
+//        Sala sala1 = new Sala(1, Turnos.MAÑANA, "20-01-22");
+//        res.crearReserva(sala1, persona1);
         Reserva res = new Reserva();
-        Persona persona = new Persona("Vicente", "Llanos", 30312585);
-        Sala sala = new Sala(1, Turnos.MAÑANA, "19-04-2022");
-
-        res.crearReserva(sala, persona);
-
-        Persona persona1 = new Persona("Valeria", "Perez", 58965421);
-        Sala sala1 = new Sala(1, Turnos.MAÑANA, "20-01-22");
-        res.crearReserva(sala1, persona1);
+        Sala sala = new Sala();
+        Persona persona = new Persona();
 
         int opcion = 0;
         do {
@@ -43,11 +46,10 @@ public class Main {
                     dni = in.nextInt();
                     persona = new Persona(nombre, apellido, dni);
 
-                    System.out.println("Indique una Fecha");
-                    fecha = in.next();
-                    
+                    LocalDate dat = sala.validarFecha();
+
                     Turnos turno = elijaTurno();
-                    Sala s = new Sala(1, turno, fecha);
+                    Sala s = new Sala(1, turno, dat);
 
                     System.out.println("------------------------------");
                     System.out.println(res.crearReserva(s, persona));
